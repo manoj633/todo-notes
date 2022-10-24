@@ -1,1 +1,23 @@
-<p>todo-list works!</p>
+<div class="container">
+  <div class="app-title-container">
+    <span>*</span>
+    <span class="app-title">Todo App</span>
+  </div>
+  <div class="todo-list-container">
+    <div>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+    <div class="todo-list" *ngFor="let todo of todos">
+      <div class="work-status">{{ todo.status }}</div>
+      <div class="work-text">{{ todo.task }}</div>
+      <div class="amend-buttons">
+        <button class="edit-btn">edit</button>
+        <button class="delete-btn">delete</button>
+      </div>
+    </div>
+  </div>
+  <button (click)="onAddTask()">Add task</button>
+</div>
+<router-outlet></router-outlet>

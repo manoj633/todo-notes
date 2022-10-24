@@ -1,1 +1,27 @@
-<p>todo-form works!</p>
+<div class="overlay"></div>
+<div class="alert-box">
+  <form>
+    <div>
+      <textarea
+        name="todo"
+        id="todo"
+        cols="30"
+        rows="10"
+        placeholder="add your task"
+      ></textarea>
+      <div class="status-selector">
+        <label for="status">Status</label>
+        <input
+          type="radio"
+          id="todo"
+          name="status"
+          value="todo"
+          [defaultChecked]="true"
+        />
+        <label for="todo">todo</label><br />
+        <input type="radio" id="done" name="status" value="done" />
+        <label for="done">Done</label>
+      </div>
+    </div>
+  </form>
+</div>

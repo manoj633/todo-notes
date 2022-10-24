@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { todo } from '../model/todo.model';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  constructor() { }
+  todos!: todo[];
+
+  constructor(private todoService: TodoService, private router: Router) {
+  }
 
   ngOnInit(): void {
+    this.todoService.getTasks();
+  }
+
+  onAddTask() {
+    this.router.navigate(['addTask']);
   }
 
 }
